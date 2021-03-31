@@ -17,6 +17,5 @@ iter_matches = filter(filtering, iter_matches)
 #next(iter_matches)  # Skipping the column names
 
 
-
 for row in iter_matches:
     print(row)
