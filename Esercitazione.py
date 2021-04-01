@@ -1,5 +1,5 @@
 import csv
-
+import itertools as it
 
 
 def get_worldcup_matches(csv_filename):
@@ -38,10 +38,11 @@ print(dictionaries)
 
 italy_goal_count = 0
 
-for m_dict in dictionaries:
-    if(m_dict['home team'] == "Italy"):
-        italy_goal_count += int(m_dict['home score'])
-    elif(m_dict['away team'] == "Italy"):
-        italy_goal_count += int(m_dict['away score'])
+italy_goal_count = sum(int(m_dict['home score']) for m_dict in dictionaries if(m_dict['home team'] == "Italy"))
+
+italy_goal_count += sum(int(m_dict['away score']) for m_dict in dictionaries if(m_dict['away team'] == "Italy"))
+    
         
+
+
 print(italy_goal_count)
