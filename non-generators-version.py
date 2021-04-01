@@ -42,6 +42,10 @@ def main_func():
             "neutral" : match[8],
         })
 
+
+    
+
+
     """ 
     for row in worldcup_matches[:5]:
     # parsing each column of a row
