@@ -16,22 +16,12 @@ iter_matches = iter(get_worldcup_matches("results.csv"))
 iter_matches = filter(filtering, iter_matches)
 #next(iter_matches)  # Skipping the column names
 
+
 dictionaries = []
+listOfKeys=["date","home team","away team","home score","away score","tournament","city","country","neutral"]
 
 for row in iter_matches:
-    dictionaries.append({
-  "date": row[0],
-  "home team": row[1],
-  "away team": row[2],
-  "home score": row[3],
-  "away score": row[4],
-  "tournament": row[5],
-  "city": row[6],
-  "country": row[7],
-  "neutral": row[8],
-})
-    #print(row)
-
+    dictionaries.append(dict(zip(listOfKeys,row)))
 
 
 print(dictionaries)
@@ -42,7 +32,4 @@ italy_goal_count = sum(int(m_dict['home score']) for m_dict in dictionaries if(m
 
 italy_goal_count += sum(int(m_dict['away score']) for m_dict in dictionaries if(m_dict['away team'] == "Italy"))
     
-        
-
-
 print(italy_goal_count)
