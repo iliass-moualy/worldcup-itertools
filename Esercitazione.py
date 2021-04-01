@@ -8,7 +8,7 @@ def get_worldcup_matches(csv_filename):
             yield match_record
 
 def filtering(row):
-    return row[5] == "FIFA World Cup" #Filters per Wolrd CUp games only
+    return row[5] == "FIFA World Cup" #Filters per Wolrd Cup games only
 
 
 iter_matches = iter(get_worldcup_matches("results.csv"))
@@ -16,6 +16,20 @@ iter_matches = iter(get_worldcup_matches("results.csv"))
 iter_matches = filter(filtering, iter_matches)
 #next(iter_matches)  # Skipping the column names
 
+dictionaries = []
 
 for row in iter_matches:
-    print(row)
+    dictionaries.append({
+  "date": row[0],
+  "home team": row[1],
+  "away team": row[2],
+  "home score": row[3],
+  "away score": row[4],
+  "tournament": row[5],
+  "city": row[6],
+  "country": row[7],
+  "neutral": row[8],
+})
+    #print(row)
+
+print(dictionaries)
