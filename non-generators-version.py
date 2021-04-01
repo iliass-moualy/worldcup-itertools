@@ -43,16 +43,16 @@ def main_func():
         })
 
 
-    
+    italy_goals_count = 0
 
+    for match in dictionaries:
+        if(match['home team'] == "Italy"):
+            italy_goals_count += int(match['home score'])
+        elif(match['away team'] == "Italy"):
+            italy_goals_count += int(match['away score'])
 
-    """ 
-    for row in worldcup_matches[:5]:
-    # parsing each column of a row
-        for col in row:
-            print("%10s"%col),
-        print('\n')
-    """
+    print(italy_goals_count)
+
 
 if __name__ == "__main__":
     main_func()
