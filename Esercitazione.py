@@ -32,4 +32,16 @@ for row in iter_matches:
 })
     #print(row)
 
+
+
 print(dictionaries)
+
+italy_goal_count = 0
+
+for m_dict in dictionaries:
+    if(m_dict['home team'] == "Italy"):
+        italy_goal_count += int(m_dict['home score'])
+    elif(m_dict['away team'] == "Italy"):
+        italy_goal_count += int(m_dict['away score'])
+        
+print(italy_goal_count)
