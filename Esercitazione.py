@@ -26,7 +26,7 @@ def main_func():
         dictionaries.append(dict(zip(listOfKeys,row)))
 
 
-    print(dictionaries)
+    #print(dictionaries)
 
     italy_goal_count = 0
 
@@ -34,7 +34,7 @@ def main_func():
 
     italy_goal_count += sum(int(m_dict['away score']) for m_dict in dictionaries if(m_dict['away team'] == "Italy"))
         
-    print(italy_goal_count)
+    #print(italy_goal_count)
 
 if __name__ == "__main__":
     main_func()
