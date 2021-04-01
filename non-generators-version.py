@@ -28,6 +28,7 @@ def main_func():
     worldcup_matches = list(filter(filtering, matches))
 
     
+    
     """ 
     for row in worldcup_matches[:5]:
     # parsing each column of a row
