@@ -27,8 +27,21 @@ def main_func():
 
     worldcup_matches = list(filter(filtering, matches))
 
-    
-    
+    dictionaries = []
+
+    for match in worldcup_matches:
+        dictionaries.append({
+            "date" : match[0],
+            "home team" : match[1],
+            "away team" : match[2],
+            "home score" : match[3],
+            "away score" : match[4],
+            "tournament" : match[5],
+            "city" : match[6],
+            "country" : match[7],
+            "neutral" : match[8],
+        })
+
     """ 
     for row in worldcup_matches[:5]:
     # parsing each column of a row
