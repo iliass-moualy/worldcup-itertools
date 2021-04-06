@@ -4,21 +4,30 @@ from memory_profiler import profile
 
 
 def main_func():
+
+    #Generatore per estrarre le partite riga per riga
     def get_worldcup_matches(csv_filename):
         with open(csv_filename, "r", encoding="utf8") as match_records:
             for match_record in csv.reader(match_records):
                 yield match_record
 
+    #Funzione per filtrare filtrare solo le partite dei mondiali
     def filtering(row):
-        return row[5] == "FIFA World Cup" #Filters per Wolrd Cup games only
+        return row[5] == "FIFA World Cup" 
 
 
+    #iteratore con le partite
     iter_matches = iter(get_worldcup_matches("results.csv"))
 
+    #iteratore con le partite dei mondiali
     iter_matches = filter(filtering, iter_matches)
-    #next(iter_matches)  # Skipping the column names
+    
+
+    next(iter_matches)  # Skipping the column names
 
 
+
+    #Creazione dizionari e lista di dizionari 
     dictionaries = []
     listOfKeys=["date","home team","away team","home score","away score","tournament","city","country","neutral"]
 
@@ -27,6 +36,9 @@ def main_func():
 
 
     #print(dictionaries)
+
+
+    #Conteggio gol fatti dall'italia nei campionati mondiali tramite generator expressions
 
     italy_goal_count = 0
 
