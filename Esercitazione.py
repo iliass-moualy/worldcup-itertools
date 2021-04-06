@@ -2,7 +2,7 @@ import csv
 import itertools as it
 from memory_profiler import profile
 
-@profile
+
 def main_func():
     def get_worldcup_matches(csv_filename):
         with open(csv_filename, "r", encoding="utf8") as match_records:
