@@ -1,7 +1,7 @@
 import csv
 from memory_profiler import profile
 
-@profile
+
 def main_func():
 
     fields = []
