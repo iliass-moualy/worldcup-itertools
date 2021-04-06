@@ -6,7 +6,7 @@ def main_func():
 
     fields = []
     matches = []
-
+    #apertura del csv ed estrazione delle righe in lista matches
     with open("results.csv", 'r', encoding="utf8") as csvfile:
         csvreader = csv.reader(csvfile)
 
@@ -14,19 +14,16 @@ def main_func():
 
         for match in csvreader:
             matches.append(match)
-
-    """      
-    for row in matches:
-        for col in row:
-            print("%10s"%col),
-        print('\n')
-    """
     
+    #Funzinoe per filtrare partite dei mondiali
     def filtering(row):
         return row[5] == "FIFA World Cup" #Filters per Wolrd Cup games only
 
+    #Filtrare partite
     worldcup_matches = list(filter(filtering, matches))
 
+
+    #Lista di dizionari con una partita ciascuno
     dictionaries = []
 
     for match in worldcup_matches:
@@ -43,6 +40,8 @@ def main_func():
         })
 
 
+
+    #conteggio gol dell'italia iterando tutta la lista di dizionari#
     italy_goals_count = 0
 
     for match in dictionaries:
